@@ -1,31 +1,31 @@
 // Constantes e Variáveis
 // Seleção de elementos HTML
 const buttonCreateTask = document.getElementById('criar-tarefa');
-const elementTaskList = document.getElementById('lista-tarefas');
-const elementTaksText = document.getElementById('texto-tarefa');
+const taskList = document.getElementById('lista-tarefas');
+const inputTask = document.getElementById('texto-tarefa');
 
 // Funções
-function removeBackgroundcolor() {
-    const elementLi = document.getElementsByTagName('li');
-    for (let index = 0; index < elementLi.length; index += 1) {
-        elementLi[index].style.backgroundColor = 'rgb(128, 128, 128)';
-    }
-}
-
 buttonCreateTask.addEventListener('click', () => {
-  if (elementTaksText.value) {
-    const elementLi = document.createElement('li');
-    elementLi.innerHTML = elementTaksText.value;
-    elementTaskList.appendChild(elementLi);
-    elementTaksText.value = '';
-    elementLi.addEventListener('click', () => {
-        if (elementLi.style.backgroundColor === '') {
-            elementLi.style.backgroundColor = 'rgb(128, 128, 128)';
-        } else if (elementLi.style.backgroundColor === 'rgb(128, 128, 128)') {
-            elementLi.style.backgroundColor = '';
-        }
-    })
-  } else alert('Erro: Insira uma tarefa!');
+  const listItem = document.createElement('li');
+  listItem.innerHTML = inputTask.value;
+  listItem.className = 'list-item';
+  taskList.appendChild(listItem);
+  inputTask.value = '';
+});
+
+taskList.addEventListener('click', function(event) {
+  const elementClassSelectedNodes = document.querySelectorAll('.selected');
+  const elementClassSelected = document.querySelector('.selected');
+  if (elementClassSelectedNodes.length !== 0) {
+      elementClassSelected.classList.remove('selected');
+      event.target.classList.add('selected');
+  } else event.target.classList.add('selected');
+});
+
+taskList.addEventListener('dblclick', function(event) {
+  if (event.target.classList.contains('completed')) {
+      event.target.classList.remove('completed');
+  } else event.target.classList.add('completed');
 });
 
 // Execução
