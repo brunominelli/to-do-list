@@ -7,11 +7,15 @@ console.log(buttonCreateTask);
 console.log(elementTaksText);
 console.log(elementTaskList);
 // Funções
-
-buttonCreateTask.addEventListener('click', () => {
-  const elementLi = document.createElement('li');
-  elementLi.innerHTML = elementTaksText.value;
-  elementTaskList.appendChild(elementLi);
-  elementTaksText.value = '';
-});
+function createTask() {
+  buttonCreateTask.addEventListener('click', () => {
+    if (elementTaksText.value) {
+      const elementLi = document.createElement('li');
+      elementLi.innerHTML = elementTaksText.value;
+      elementTaskList.appendChild(elementLi);
+      elementTaksText.value = '';
+    } else alert('Erro: Insira uma tarefa!');
+  });
+}
 // Execução
+createTask();
