@@ -12,13 +12,13 @@
         <h1>Minha Lista de Tarefas</h1>
         <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
     </header>
-    <main>
+    <main class="container">
         <section>
-            <nav>
-                <input type="text" name="texto-tarefa" id="texto-tarefa" placeholder="Insira sua tarefa">
-                <button id="criar-tarefa">Criar tarefa</button>
-                <button id="apaga-tudo">Limpar tarefas</button>
-                <button id="remover-finalizados">Limpar tarefas finalizadas</button>
+            <input type="text" name="texto-tarefa" id="texto-tarefa" class="input" placeholder="Insira sua tarefa">
+            <nav class="btn-container">
+                <button id="criar-tarefa" class="btn">Criar tarefa</button>
+                <button id="apaga-tudo" class="btn">Limpar tarefas</button>
+                <button id="remover-finalizados" class="btn">Limpar tarefas finalizadas</button>
             </nav>
             <ol id="lista-tarefas"></ol>
         </section>
