@@ -13,7 +13,14 @@ header, header h1, footer {
 }
 
 ol {
+    padding: 0;
     list-style: none;
+}
+
+.list-item {
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px 2px #555;
 }
 
 .selected {
