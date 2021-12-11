@@ -21,7 +21,7 @@ ol {
 }
 
 .container {
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     width: 80%;
     margin: auto;
     padding: 100px;
@@ -41,7 +41,8 @@ ol {
 }
 
 .btn {
-    width: 30%;
+    width: 20%;
+    margin: 10px;
     text-transform: uppercase;
     background-color: #000;
     color: #fff;
